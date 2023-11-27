@@ -28,9 +28,9 @@ public class GestorDeTareas {
                 case "b":
                     System.out.println("ID tarea a borrar");
                     int id = escaner.nextInt();
-                    for (Tarea i : arrayTareas) {
-                        if (i.getId_tarea() == id) {
-                            arrayTareas.remove(i);
+                    for (int i = 0; i <= arrayTareas.size(); i++) {
+                        if (arrayTareas.get(i).getId_tarea() == id) {
+                            arrayTareas.remove(arrayTareas.get(i));
                         }
                     }
                     break;
