@@ -11,7 +11,7 @@ public class GestorDeTareas {
         ArrayList<Tarea> arrayTareas = new ArrayList<Tarea>();
 
         while (true) {
-            System.out.println("a) Crear tarea\nb) Borrar tarea\nc) Mostrar tareas");
+            System.out.println("a) Crear tarea\nb) Borrar tarea\nc) Mostrar tareas\ne) Asignar fecha limite");
             String opcion = escaner.nextLine();
 
             switch (opcion) {
@@ -22,7 +22,9 @@ public class GestorDeTareas {
                     String descripcion = escaner.nextLine();
                     System.out.println("Estado");
                     String estado = escaner.nextLine();
-                    Tarea tareaNew = new Tarea(nombre, descripcion, estado);
+                    System.out.println("Fecha limite");
+                    String fechaLimite = escaner.nextLine();
+                    Tarea tareaNew = new Tarea(nombre, descripcion, estado, fechaLimite);
                     arrayTareas.add(tareaNew);
                     break;
                 case "b":
@@ -37,6 +39,17 @@ public class GestorDeTareas {
                 case "c":
                     for (Tarea i : arrayTareas) {
                         System.out.println("ID: "+i.getId_tarea()+" , Nombre: "+i.getNombre()+" , Estado: "+i.getEstado()+" , Descripcion: "+i.getDescripcion());
+                    }
+                    break;
+                case "d":
+                    System.out.println("ID tarea");
+                    int id_fecha = escaner.nextInt();
+                    System.out.println("Nueva fecha limite");
+                    String newFechaLimite = escaner.nextLine();
+                    for (int i = 0; i <= arrayTareas.size(); i++) {
+                        if (arrayTareas.get(i).getId_tarea() == id_fecha) {
+                            arrayTareas.get(i).setFechaLimite(newFechaLimite);
+                        }
                     }
                     break;
             }

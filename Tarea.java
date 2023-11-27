@@ -9,12 +9,14 @@ public class Tarea {
     private String nombre;
     private String descripcion;
     private String estado;
+    private String fechaLimite;
 
-    public Tarea(String nombre, String descripcion, String estado) {
+    public Tarea(String nombre, String descripcion, String estado, String fechaLimite)  {
         this.id_tarea = id++;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.estado = estado;
+        this.fechaLimite = fechaLimite;
     }
 
     public String getNombre() {
@@ -33,6 +35,10 @@ public class Tarea {
         return id_tarea;
     }
 
+    public String getFechaLimite() {
+        return fechaLimite;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -43,5 +49,9 @@ public class Tarea {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public void setFechaLimite(String fechaLimite) {
+        this.fechaLimite = fechaLimite;
     }
 }
