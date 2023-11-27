@@ -10,13 +10,23 @@ public class Tarea {
     private String descripcion;
     private String estado;
     private String fechaLimite;
+    private String prioridad;
 
-    public Tarea(String nombre, String descripcion, String estado, String fechaLimite)  {
+    public Tarea(String nombre, String descripcion, String estado, String prioridad, String fechaLimite) {
         this.id_tarea = id++;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.estado = estado;
         this.fechaLimite = fechaLimite;
+        this.prioridad = prioridad;
+    }
+
+    public String getPrioridad() {
+        return prioridad;
+    }
+
+    public void setPrioridad(String prioridad) {
+        this.prioridad = prioridad;
     }
 
     public String getNombre() {

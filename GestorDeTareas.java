@@ -11,7 +11,8 @@ public class GestorDeTareas {
         ArrayList<Tarea> arrayTareas = new ArrayList<Tarea>();
 
         while (true) {
-            System.out.println("a) Crear tarea\nb) Borrar tarea\nc) Mostrar tareas\ne) Asignar fecha limite");
+            System.out.println("a) Crear tarea\nb) Borrar tarea\nc) Mostrar tareas\nd)Modificar Prioridad\ne) Asignar fecha limite");
+
             String opcion = escaner.nextLine();
 
             switch (opcion) {
@@ -24,7 +25,9 @@ public class GestorDeTareas {
                     String estado = escaner.nextLine();
                     System.out.println("Fecha limite");
                     String fechaLimite = escaner.nextLine();
-                    Tarea tareaNew = new Tarea(nombre, descripcion, estado, fechaLimite);
+                    System.out.println("Prioridad: ");
+                    String prioridad = escaner.nextLine();
+                    Tarea tareaNew = new Tarea(nombre, descripcion, estado, prioridad, fechaLimite);
                     arrayTareas.add(tareaNew);
                     break;
                 case "b":
@@ -38,7 +41,9 @@ public class GestorDeTareas {
                     break;
                 case "c":
                     for (Tarea i : arrayTareas) {
-                        System.out.println("ID: "+i.getId_tarea()+" , Nombre: "+i.getNombre()+" , Estado: "+i.getEstado()+" , Descripcion: "+i.getDescripcion());
+                        System.out.println("ID: " + i.getId_tarea() + " , Nombre: " + i.getNombre() + " , Estado: "
+                                + i.getEstado() + " , Descripcion: " + i.getDescripcion() + "Prioridad: "
+                                + i.getPrioridad() + " Fecha limite: "+ i.getFechaLimite());
                     }
                     break;
                 case "d":
@@ -52,9 +57,20 @@ public class GestorDeTareas {
                         }
                     }
                     break;
+                case "e":
+                    System.out.println("ID tarea a borrar");
+                    int id_prioridad = escaner.nextInt();
+                    System.out.println("Modificar prioridad: ");
+                    String newprioridad = escaner.nextLine();
+
+                    for (int i = 0; i <= arrayTareas.size(); i++) {
+                        if (arrayTareas.get(i).getId_tarea() == id_prioridad) {
+                            arrayTareas.get(i).setPrioridad(newprioridad);
+                        }
+                    }
+                    break;
             }
         }
 
-        /*Pruebaaaaaaa */
     }
 }
