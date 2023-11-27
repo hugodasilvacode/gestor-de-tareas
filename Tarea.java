@@ -7,13 +7,13 @@ public class Tarea {
 
     private int id_tarea;
     private String nombre;
-    private String descripcion;
+    private String comentario;
     private String estado;
 
-    public Tarea(String nombre, String descripcion, String estado) {
+    public Tarea(String nombre, String comentario, String estado) {
         this.id_tarea = id++;
         this.nombre = nombre;
-        this.descripcion = descripcion;
+        this.comentario = comentario;
         this.estado = estado;
     }
 
@@ -21,8 +21,8 @@ public class Tarea {
         return nombre;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getComentario() {
+        return comentario;
     }
 
     public String getEstado() {
@@ -37,8 +37,8 @@ public class Tarea {
         this.nombre = nombre;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
     }
 
     public void setEstado(String estado) {
