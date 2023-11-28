@@ -1,6 +1,6 @@
-# gestor-de-tareas
+# Gestor de Tareas
 
-esta aplicación es un gestor de tareas
+Miniproyecto en Java de un gestor de tareas.
 
 ## Autores: 
 * [GitHub Hugo](https://github.com/hugodasilvacode)
