@@ -11,7 +11,8 @@ public class GestorDeTareas {
         ArrayList<Tarea> arrayTareas = new ArrayList<Tarea>();
 
         while (true) {
-            System.out.println("a) Crear tarea\nb) Borrar tarea\nc) Mostrar tareas");
+            System.out.println("a) Crear tarea\nb) Borrar tarea\nc) Mostrar tareas\nd)Modificar Prioridad\ne) Asignar fecha limite");
+
             String opcion = escaner.nextLine();
 
             switch (opcion) {
@@ -22,9 +23,14 @@ public class GestorDeTareas {
                     String comentario = escaner.nextLine();
                     System.out.println("Estado");
                     String estado = escaner.nextLine();
-                    Tarea tareaNew = new Tarea(nombre, comentario, estado);
+                    System.out.println("Fecha limite");
+                    String fechaLimite = escaner.nextLine();
+                    System.out.println("Prioridad: ");
+                    String prioridad = escaner.nextLine();
+                    Tarea tareaNew = new Tarea(nombre, comentario, estado, prioridad, fechaLimite);
                     arrayTareas.add(tareaNew);
                     break;
+                    
                 case "b":
                     System.out.println("ID tarea a borrar");
                     int id = escaner.nextInt();
@@ -36,12 +42,36 @@ public class GestorDeTareas {
                     break;
                 case "c":
                     for (Tarea i : arrayTareas) {
-                        System.out.println("ID: "+i.getId_tarea()+" , Nombre: "+i.getNombre()+" , Estado: "+i.getEstado()+" , Descripcion: "+i.getComentario());
+                        System.out.println("ID: " + i.getId_tarea() + " , Nombre: " + i.getNombre() + " , Estado: "
+                                + i.getEstado() + " , Descripcion: " + i.getComentario() + "Prioridad: "
+                                + i.getPrioridad() + " Fecha limite: "+ i.getFechaLimite());
+                    }
+                    break;
+                case "d":
+                    System.out.println("ID tarea");
+                    int id_fecha = escaner.nextInt();
+                    System.out.println("Nueva fecha limite");
+                    String newFechaLimite = escaner.nextLine();
+                    for (int i = 0; i <= arrayTareas.size(); i++) {
+                        if (arrayTareas.get(i).getId_tarea() == id_fecha) {
+                            arrayTareas.get(i).setFechaLimite(newFechaLimite);
+                        }
+                    }
+                    break;
+                case "e":
+                    System.out.println("ID tarea a borrar");
+                    int id_prioridad = escaner.nextInt();
+                    System.out.println("Modificar prioridad: ");
+                    String newprioridad = escaner.nextLine();
+
+                    for (int i = 0; i <= arrayTareas.size(); i++) {
+                        if (arrayTareas.get(i).getId_tarea() == id_prioridad) {
+                            arrayTareas.get(i).setPrioridad(newprioridad);
+                        }
                     }
                     break;
             }
         }
 
-        /*Pruebaaaaaaa */
     }
 }
