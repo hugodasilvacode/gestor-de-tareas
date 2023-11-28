@@ -1,6 +1,6 @@
 # Gestor de Tareas
 
-Miniproyecto en Java de un gestor de tareas.
+Mini proyecto en Java de un gestor de tareas.
 
 ## Autores: 
 * [GitHub Hugo](https://github.com/hugodasilvacode)
