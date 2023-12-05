@@ -7,22 +7,35 @@ public class Tarea {
 
     private int id_tarea;
     private String nombre;
-    private String descripcion;
+    private String comentario;
     private String estado;
+    private String fechaLimite;
+    private String prioridad;
 
-    public Tarea(String nombre, String descripcion, String estado) {
+
+    public Tarea(String nombre, String comentario, String estado, String prioridad, String fechaLimite) {
         this.id_tarea = id++;
         this.nombre = nombre;
-        this.descripcion = descripcion;
+        this.comentario = comentario;
         this.estado = estado;
+        this.fechaLimite = fechaLimite;
+        this.prioridad = prioridad;
+    }
+
+    public String getPrioridad() {
+        return prioridad;
+    }
+
+    public void setPrioridad(String prioridad) {
+        this.prioridad = prioridad;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getComentario() {
+        return comentario;
     }
 
     public String getEstado() {
@@ -33,15 +46,23 @@ public class Tarea {
         return id_tarea;
     }
 
+    public String getFechaLimite() {
+        return fechaLimite;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
     }
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public void setFechaLimite(String fechaLimite) {
+        this.fechaLimite = fechaLimite;
     }
 }
